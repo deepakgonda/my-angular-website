@@ -7,6 +7,7 @@ import { LogUpdateService } from './services/log-update.service';
 import { VersionUpdatesPromptService } from './services/version-update-prompt.service';
 import { httpInterceptorProviders } from './interceptors';
 import { HttpClientModule } from '@angular/common/http';
+import { PushNotificationService } from './services/push-notification.service';
 
 
 const components = [
@@ -26,7 +27,7 @@ const components = [
     ...components
   ],
   providers: [
-    ServiceWorkerService, CheckForUpdateService, LogUpdateService, VersionUpdatesPromptService,
+    ServiceWorkerService, CheckForUpdateService, LogUpdateService, VersionUpdatesPromptService, PushNotificationService,
     httpInterceptorProviders,
   ]
 })
