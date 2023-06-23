@@ -14,7 +14,7 @@ jobs:
       AWS_REGION: ${{ vars.AWS_DEFAULT_REGION }}
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@master
       - name: Setup Node.js ${{ matrix.node-version }}
@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: Install Angular CLI
-        run: npm install -g @angular/cli@14
+        run: npm install -g @angular/cli@16
       - name: Install Dependencies
         run: npm install --force
       - name: Build Angular App
