@@ -48,12 +48,20 @@ export class PushNotificationService {
 
 
           // Check if user have already subscribed or not....
-          let oldSubscription = await Promise.race([this.checkSubscription(), this.timeout(15 * 1000)]);
-          console.log('[NGSW] oldSubscription: ', oldSubscription);
+          let oldSubscription;
+          try {
+            oldSubscription = await Promise.race([this.checkSubscription(), this.timeout(15 * 1000)]);
+            console.log('[NGSW] oldSubscription: ', oldSubscription);
+          } catch (err) {
+            console.log('[NGSW] Error in getting oldSubscription: ', err);
+          }
+
 
 
           // Add Logic to remove old subscription here....
+          if (oldSubscription) {
 
+          }
 
 
 
