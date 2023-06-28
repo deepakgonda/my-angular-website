@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { SwPush } from '@angular/service-worker';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from 'src/environments/environment';
+import { FingerprintService } from './fingerprint.service';
+import { BrowserAgentService } from './browser-agent.service';
 
 
 @Injectable()
@@ -24,7 +26,9 @@ export class PushNotificationService {
   constructor(
     private http: HttpClient,
     private swPush: SwPush,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private fingerprint: FingerprintService,
+    private browserAgentService: BrowserAgentService
   ) { }
 
   async init() {
@@ -80,7 +84,15 @@ export class PushNotificationService {
               console.log('[NGSW] Push Subscription payload to Request:', subscription);
             }
 
-            this.sendPushSubscription(subscription).subscribe(r => {
+            const visitorId = await this.fingerprint.getVisitorId();
+            const browserUserAgent = await this.browserAgentService.getBrowserUserAgent();
+            let payload = {
+              visitorId: visitorId,
+              browserUserAgent: browserUserAgent,
+              pushSubscription: subscription, 
+            };
+            console.log('[NGSW] Send Push SubscriptionPayload:', payload);
+            this.sendPushSubscription(payload).subscribe(r => {
               console.log('[NGSW] Send Push Subscription to Backend Success: Response', r);
             }, err => {
               console.log('[NGSW] Send Push Subscription to Backend Error: ', err);
@@ -161,8 +173,8 @@ export class PushNotificationService {
   }
 
 
-  private sendPushSubscription(subscription: PushSubscription): Observable<any> {
-    return this.http.post('/push-notification/subscribe', subscription);
+  private sendPushSubscription(payload :any): Observable<any> {
+    return this.http.post('/push-notification/subscribe', payload);
   }
 
 

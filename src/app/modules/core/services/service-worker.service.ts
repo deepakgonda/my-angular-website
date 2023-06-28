@@ -3,7 +3,6 @@ import { CheckForUpdateService } from './check-for-update.service';
 import { LogUpdateService } from './log-update.service';
 import { VersionUpdatesPromptService } from './version-update-prompt.service';
 import { environment } from 'src/environments/environment';
-import { PushNotificationService } from './push-notification.service';
 
 @Injectable()
 export class ServiceWorkerService {
@@ -12,7 +11,6 @@ export class ServiceWorkerService {
         private checkForUpdateService: CheckForUpdateService,
         private logUpdateService: LogUpdateService,
         private promptUpdateService: VersionUpdatesPromptService,
-        private pushNotificationService: PushNotificationService
     ) { }
 
 
@@ -23,7 +21,6 @@ export class ServiceWorkerService {
             this.checkForUpdateService.init();
             this.logUpdateService.init();
             this.promptUpdateService.init();
-            // this.pushNotificationService.init();
         } else {
             console.log('Skipping Service Worker Services, as running in Local Environment')
         }
