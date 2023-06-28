@@ -8,6 +8,8 @@ import { VersionUpdatesPromptService } from './services/version-update-prompt.se
 import { httpInterceptorProviders } from './interceptors';
 import { HttpClientModule } from '@angular/common/http';
 import { PushNotificationService } from './services/push-notification.service';
+import { FingerprintService } from './services/fingerprint.service';
+import { BrowserAgentService } from './services/browser-agent.service';
 
 
 const components = [
@@ -27,7 +29,8 @@ const components = [
     ...components
   ],
   providers: [
-    ServiceWorkerService, CheckForUpdateService, LogUpdateService, VersionUpdatesPromptService, PushNotificationService,
+    ServiceWorkerService, CheckForUpdateService, LogUpdateService, VersionUpdatesPromptService,
+    PushNotificationService, FingerprintService, BrowserAgentService,
     httpInterceptorProviders,
   ]
 })
