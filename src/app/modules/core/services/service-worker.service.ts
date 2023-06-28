@@ -23,7 +23,7 @@ export class ServiceWorkerService {
             this.checkForUpdateService.init();
             this.logUpdateService.init();
             this.promptUpdateService.init();
-            this.pushNotificationService.init();
+            // this.pushNotificationService.init();
         } else {
             console.log('Skipping Service Worker Services, as running in Local Environment')
         }

@@ -11,9 +11,7 @@ export class PushNotificationService {
 
   notificationPermission!: "default" | "denied" | "granted";
 
-  subscriptionStorageName = 'push-subscription-23-06-2023';
-
-  operationStatus = false;
+  isOperationSuccess = false;
 
   notificationSubsFailedError = 'Unable to subscribe for push notifications. Please check notification permission in your browser settings.';
 
@@ -31,75 +29,88 @@ export class PushNotificationService {
 
   async init() {
 
-    console.log('[NGSW] Init Method Begin...');
 
-    await new Promise(resolve => setTimeout(resolve, 5 * 1000)); // Waiting for additional 5 secs to let everything stabilize...
+    if (environment.production) {
 
-    try {
-      if (!("Notification" in window)) {
-        this.notificationSubsFailedError = 'This browser does not support push notification. It can not be enabled. For best experience try other browsers.';
-        console.log(`[NGSW] ${this.notificationSubsFailedError}`);
-      } else {
-        this.notificationPermission = Notification.permission;
-        console.log('[NGSW] Notification.permission:', this.notificationPermission);   // "default" | "denied" | "granted"
+      await new Promise(resolve => setTimeout(resolve, 5 * 1000)); // Waiting for additional 5 secs to let everything stabilize...
+      console.log('[NGSW] Init Method Begin...');
 
-        if (this.notificationPermission == 'granted' || this.notificationPermission == 'default') {
-          console.log('[NGSW] SW Push is enabled and notification permission is granted');
-
-
-          // Check if user have already subscribed or not....
-          let oldSubscription;
-          try {
-            oldSubscription = await Promise.race([this.checkSubscription(), this.timeout(15 * 1000)]);
-            console.log('[NGSW] oldSubscription: ', oldSubscription);
-          } catch (err) {
-            console.log('[NGSW] Error in getting oldSubscription: ', err);
-          }
-
-
-
-          // Add Logic to remove old subscription here....
-          if (oldSubscription) {
-
-          }
-
-
-
-
-          // Add Logic to get new subscription here....
-          let subscription!: PushSubscription;
-          if (!oldSubscription) {
-            subscription = (await Promise.race([this.requestNewSubscription(), this.timeout(20 * 1000)])) as PushSubscription;
-            console.log('[NGSW] Push Subscription payload to Request:', subscription);
-          }
-
-          this.sendPushSubscription(subscription).subscribe(r => {
-            console.log('[NGSW] Send Push Subscription to Backend Success: Response', r);
-          }, err => {
-            console.log('[NGSW] Send Push Subscription to Backend Error: ', err);
-          });
-
-
-          if(oldSubscription || subscription) {
-            this.operationStatus = true;  // Need not to show error...
-
-            this.registerForListeningMessages();
-          }
-
-        } else {
-          this.notificationSubsFailedError = 'Notification permission is denied. Please reset your notification permission for our Web App in your browser settings.';
+      try {
+        if (!("Notification" in window)) {
+          this.notificationSubsFailedError = 'This browser does not support push notification. It can not be enabled. For best experience try other browsers.';
           console.log(`[NGSW] ${this.notificationSubsFailedError}`);
+        } else {
+          this.notificationPermission = Notification.permission;
+          console.log('[NGSW] Notification.permission:', this.notificationPermission);   // "default" | "denied" | "granted"
+
+
+          if (this.notificationPermission == 'default') {
+            this.notificationSubsFailedError = 'Notification permission is not allowed. Please check url bar for notification approval pop up or set your notification permission for our Web App to be allowed in your browser settings.';
+            console.log(`[NGSW] ${this.notificationSubsFailedError}`);
+          }
+
+
+          if (this.notificationPermission == 'granted') {
+            console.log('[NGSW] SW Push is enabled and notification permission is granted');
+
+
+            // Check if user have already subscribed or not....
+            let oldSubscription;
+            try {
+              oldSubscription = await Promise.race([this.checkSubscription(), this.timeout(15 * 1000)]);
+              console.log('[NGSW] oldSubscription: ', oldSubscription);
+            } catch (err) {
+              console.log('[NGSW] Error in getting oldSubscription: ', err);
+            }
+
+
+
+            // Add Logic to remove old subscription here....
+            if (oldSubscription) {
+
+            }
+
+
+
+
+            // Add Logic to get new subscription here....
+            let subscription!: PushSubscription;
+            if (!oldSubscription) {
+              subscription = (await Promise.race([this.requestNewSubscription(), this.timeout(20 * 1000)])) as PushSubscription;
+              console.log('[NGSW] Push Subscription payload to Request:', subscription);
+            }
+
+            this.sendPushSubscription(subscription).subscribe(r => {
+              console.log('[NGSW] Send Push Subscription to Backend Success: Response', r);
+            }, err => {
+              console.log('[NGSW] Send Push Subscription to Backend Error: ', err);
+            });
+
+
+            if (oldSubscription || subscription) {
+              this.isOperationSuccess = true;  // Need not to show error...
+
+              this.registerForListeningMessages();
+            }
+
+          } else {
+            this.notificationSubsFailedError = 'Notification permission is denied. Please reset your notification permission for our Web App in your browser settings.';
+            console.log(`[NGSW] ${this.notificationSubsFailedError}`);
+          }
+        }
+      } catch (err) {
+        console.error("[NGSW]  Err:", err);
+        if (!this.isOperationSuccess) {
+          let ref = this.showRelaventPopup(this.notificationSubsFailedError, 'Warning', -1);
+          ref.onAction().subscribe(act => {
+            console.log("[NGSW] Warning notification clicked:", act);
+            ref.dismiss();
+          });
         }
       }
-    } catch (err) {
-      console.error("[NGSW]  Err:", err);
-      if (!this.operationStatus) {
-        let ref = this.showRelaventPopup(this.notificationSubsFailedError, 'Warning');
-        ref.onAction().subscribe(act => {
-          console.log("[NGSW] Warning notification clicked:", act);
-          ref.dismiss();
-        });
-      }
+
+    } else {
+      console.log('Skipping Push Notification Service Test, as running in Local Environment')
     }
 
     console.log('[NGSW] Init Method Completed...');
