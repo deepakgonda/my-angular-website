@@ -89,7 +89,7 @@ export class PushNotificationService {
             let payload = {
               visitorId: visitorId,
               browserUserAgent: browserUserAgent,
-              pushSubscription: subscription, 
+              pushSubscription: subscription ? subscription : oldSubscription, 
             };
             console.log('[NGSW] Send Push SubscriptionPayload:', payload);
             this.sendPushSubscription(payload).subscribe(r => {
