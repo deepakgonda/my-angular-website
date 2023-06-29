@@ -1,6 +1,14 @@
 {
   "name": "Deepak's WebApp",
   "short_name": "Dee's Web",
+  "app": {
+    "urls": [
+      "https://deepakpandey.in"
+    ],
+    "launch": {
+      "web_url": "https://deepakpandey.in"
+    }
+  },
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
