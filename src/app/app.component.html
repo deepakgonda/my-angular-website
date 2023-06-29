@@ -1,85 +1,116 @@
-<div class="bg-white">
-  <header class="absolute inset-x-0 top-0 z-50">
-    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="assets/images/logos/website_logo.webp" alt="">
-        </a>
-      </div>
-      <div class="flex lg:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-          <span class="sr-only">Open main menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
-      </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
-      </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </nav>
-    <!-- Mobile menu, show/hide based on menu open state. -->
-    <div class="lg:hidden" role="dialog" aria-modal="true">
-      <!-- Background backdrop, show/hide based on slide-over state. -->
-      <div class="fixed inset-0 z-50"></div>
-      <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-        <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="assets/images/logos/website_logo.webp" alt="">
-          </a>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Close menu</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
-            </div>
-            <div class="py-6">
-              <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <div class="relative isolate px-6 pt-14 lg:px-8">
-    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
-    </div>
-    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-        <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-          Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+<div class="bg-gray-100">
+  <div class="container mx-auto px-4 py-8">
+    <div class="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="p-6">
+        <div class="flex items-center justify-center">
+          <img class="w-20 h-20 rounded-full" src="assets/images/logos/website_logo.webp" alt="Profile Picture">
         </div>
+        <h2 class="mt-4 text-xl font-semibold text-center">Deepak Pandey</h2>
+        <p class="mt-2 text-gray-600 text-center">Software Developer (Full Stack)</p>
+        <p class="mt-2 text-gray-500 text-center">Coding Maestro | Full Stack Virtuoso | Architecting Elegance | AWS Certified Dev</p>
       </div>
-      <div class="text-center">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Data to enrich your online business</h1>
-        <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-          <a (click)="initPushNotificationTest($event)" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Init Push Notification Request</a>
-          <!-- <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a> -->
-        </div>
+      <div class="bg-slate-600 py-4 px-6">
+        <ul class="space-y-2">
+          <li class="flex items-center ">
+            <span class="w-6 h-6 mr-2">
+              <i class="material-icons text-white">mail</i>
+            </span>
+            <a href="mailto:mail@deepakpandey.in" target="_blank" class="text-white">mail@deepakpandey.in</a>
+          </li>
+          <li class="flex items-center">
+            <span class="w-6 h-6 mr-2">
+              <i class="material-icons text-white">phone</i>
+            </span>
+            <a href="tel:+919928640281" target="_blank" class="text-white">+91 9928 640 281</a>
+          </li>
+          <li class="flex items-center">
+            <span class="w-6 h-6 mr-2">
+              <i class="material-icons text-white">location_on</i>
+            </span>
+            <span class="text-white">Lucknow, Uttar Pradesh, India</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-6 h-6 mr-2">
+              <i class="material-icons text-white">link</i>
+            </span>
+            <a href="https://github.com/deepakgonda" target="_blank" class="text-white">https://github.com/deepakgonda</a>
+          </li>
+          <li class="flex items-center">
+            <span class="w-6 h-6 mr-2">
+              <i class="material-icons text-white">link</i>
+            </span>
+            <a href="https://www.linkedin.com/in/deepakgonda/" target="_blank" class="text-white">https://www.linkedin.com/in/deepakgonda/</a>
+          </li>
+        </ul>
       </div>
-    </div>
-    <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
-      <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+      <div class="p-4 mt-6 mb-4 bg-gray-200">
+        <p class="text-center py-2">
+          <a (click)="initPushNotificationTest($event)" class="cursor-pointer rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700">Subscribe to Notifications</a>
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold">Certifications</h3>
+        <ul class="mt-2 space-y-4">
+          <li class="bg-gray-200 px-4 py-2 rounded-lg">
+            <h4 class="text-md font-semibold">AWS Certified Developer - Associate</h4>
+            <p class="text-gray-600">Issued by Amazon Web Services (AWS)</p>
+            <p class="text-gray-600">Valid until Aug 2024</p>
+            <p class="">Earned this Certification, demonstrating proficiency in building and deploying applications on the AWS platform.</p>
+            <p class="text-center py-2">
+              <a href="https://www.credly.com/badges/1e3d70d4-75ad-4605-af4b-3ce53daafc01" target="_blank"  class="rounded-md bg-teal-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:bg-teal-600">Verify Credentials</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold">Skills</h3>
+        <ul class="mt-2 space-y-2">
+          <li class="bg-gray-200 px-4 py-2 rounded-full inline-block">NodeJs</li>
+          <li class="bg-gray-200 px-4 py-2 rounded-full inline-block">Angular</li>
+          <li class="bg-gray-200 px-4 py-2 rounded-full inline-block">Sql (MySql / Postgresql)</li>
+          <li class="bg-gray-200 px-4 py-2 rounded-full inline-block">Amazon Web Services (AWS)</li>
+          <li class="bg-gray-200 px-4 py-2 rounded-full inline-block">DevOps (CI/CD)</li>
+          <li class="bg-gray-200 px-4 py-2 rounded-full inline-block">Python</li>
+          <li class="bg-gray-200 px-4 py-2 rounded-full inline-block">Java</li>
+          <li class="bg-gray-200 px-4 py-2 rounded-full inline-block">HTML/CSS</li>
+        </ul>
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold">Experience</h3>
+        <ul class="mt-2 space-y-4">
+          <li class="flex items-start">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://media.licdn.com/dms/image/C560BAQHYauNgFAllbQ/company-logo_100_100/0/1657516063322?e=1695859200&v=beta&t=EN9LJIH5gPct2wmYgqfxU70KKAqyWbVkRaTnAoZcNPo" alt="Tis Logo">
+            <div>
+              <h4 class="text-lg font-semibold">Senior Software Engineer/ Tech Lead</h4>
+              <p class="text-gray-600">Thai Informatic Systems · Full-time</p>
+              <p class="text-gray-600">Feb 2021 - Present</p>
+              <p class="text-gray-600">Bangkok, Bangkok City, Thailand</p>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor mi sed ipsum convallis bibendum.</p> -->
+            </div>
+          </li>
+          <li class="flex items-start">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://media.licdn.com/dms/image/C560BAQFoc7lk9qSz9g/company-logo_100_100/0/1519874345195?e=1695859200&v=beta&t=afzRP7FrrkEaxHuu5TH1xGRFfMZrtt32yI9c0M-ju5c" alt="Alcanzar's Logo">
+            <div>
+              <h4 class="text-lg font-semibold">Senior Software Engineer/ Tech Lead</h4>
+              <p class="text-gray-600">Alcanzar Software Solutions Private Limited · Full-time</p>
+              <p class="text-gray-600">Jan 2019 - Dec 2020 · 2 yrs</p>
+              <p class="text-gray-600">Lucknow, Uttar Pradesh, India</p>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor mi sed ipsum convallis bibendum.</p> -->
+            </div>
+          </li>
+          <li class="flex items-start">
+            <img class="w-12 h-12 rounded-full mr-4" src="https://media.licdn.com/dms/image/D4D0BAQEUSvW9Fl91Rw/company-logo_100_100/0/1684405130666?e=1695859200&v=beta&t=3U9iCLekyx4u0NB7j4DpwdG2yqjfdye8QqJQePBLIKU" alt="Unstop's Logo">
+            <div>
+              <h4 class="text-lg font-semibold">Full Stack Developer</h4>
+              <p class="text-gray-600">Unstop (formerly Dare2Compete) · Full-time</p>
+              <p class="text-gray-600">Jun 2017 - Nov 2018 · 1 yr 6 mos</p>
+              <p class="text-gray-600">New Delhi Area, India</p>
+              <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor mi sed ipsum convallis bibendum.</p> -->
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
+
