@@ -82,25 +82,25 @@ export class PushNotificationService {
           }
 
           // Check if there is old subscription, and is still valid...
-          if (oldSubscription) {
+          // if (oldSubscription) {
 
-            const keyBuffer: ArrayBuffer | null = oldSubscription.getKey('p256dh');
-            let areKeysEqual = true;
-            if (keyBuffer) {
-              const oldVapidPublicKey = new Uint8Array(keyBuffer);
-              areKeysEqual = new TextEncoder().encode(environment.vapidKey).every((value, index) => value === oldVapidPublicKey[index]);
-              console.log('[NGSW] areKeysEqual: ', areKeysEqual);
-            }
+          //   const keyBuffer: ArrayBuffer | null = oldSubscription.getKey('p256dh');
+          //   let areKeysEqual = true;
+          //   if (keyBuffer) {
+          //     const oldVapidPublicKey = new Uint8Array(keyBuffer);
+          //     areKeysEqual = new TextEncoder().encode(environment.vapidKey).every((value, index) => value === oldVapidPublicKey[index]);
+          //     console.log('[NGSW] areKeysEqual: ', areKeysEqual);
+          //   }
 
-            if (!keyBuffer || !areKeysEqual) {
-              console.log('[NGSW] Unsubscribing old subscription.... ');
-              this.unsubscribeOldSubscription();
-              oldSubscription = null;
-            } else {
-              console.log('[NGSW] Not Unsubscribing old subscription, b/c old and new vapid keys are equal...');
-            }
+          //   if (!keyBuffer || !areKeysEqual) {
+          //     console.log('[NGSW] Unsubscribing old subscription.... ');
+          //     this.unsubscribeOldSubscription();
+          //     oldSubscription = null;
+          //   } else {
+          //     console.log('[NGSW] Not Unsubscribing old subscription, b/c old and new vapid keys are equal...');
+          //   }
 
-          }
+          // }
 
           // Add Logic to get new subscription here....
           if (!oldSubscription) {
