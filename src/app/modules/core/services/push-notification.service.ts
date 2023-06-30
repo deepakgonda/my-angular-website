@@ -34,7 +34,7 @@ export class PushNotificationService {
 
     if (environment.production) {
 
-      await new Promise(resolve => setTimeout(resolve, 5 * 1000)); // Waiting for additional 5 secs to let everything stabilize...
+      // await new Promise(resolve => setTimeout(resolve, 5 * 1000)); // Waiting for additional 5 secs to let everything stabilize...
       console.log('[NGSW] Init Method Begin...');
 
       try {
