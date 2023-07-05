@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PushNotificationService } from './services/push-notification.service';
 import { FingerprintService } from './services/fingerprint.service';
 import { BrowserAgentService } from './services/browser-agent.service';
+import { PushNotificationPromptComponent } from './components/push-notification-prompt/push-notification-prompt.component';
+import { UiModule } from '../ui/ui.module';
 
 
 const components = [
@@ -19,11 +21,13 @@ const components = [
 
 @NgModule({
   declarations: [
-    ...components
+    ...components,
+    PushNotificationPromptComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
+    UiModule
   ],
   exports: [
     ...components

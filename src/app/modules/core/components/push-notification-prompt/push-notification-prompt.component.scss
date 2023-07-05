@@ -1,0 +1,33 @@
+@import "src/sass/variables";
+@import "src/sass/_mixins";
+
+.mat-dialog-style {
+    margin: 0px;
+    padding: 5px;
+
+    .message {
+        padding: 10px;
+        border: 1px solid #585656;
+        background-color: #322f2f;
+        color: #ffffff;
+        font-family: Roboto;
+        font-weight: 100;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+
+        @include media('mobile') {
+            padding: 5px;
+        }
+
+        a {
+            color: #c0a317;
+            word-wrap: break-word;
+
+            &:hover {
+                color: #ffc107;
+            }
+        }
+    }
+
+}

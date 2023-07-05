@@ -1,0 +1,99 @@
+<div class="p-2">
+    <h2 class="text-lg font-bold ">
+        Allow Push Notifications ?
+    </h2>
+    <div class="mt-2 w-full bg-gray-500 text-white px-4 py-2 rounded-lg overflow-x-hidden">
+        <p class="text-white">
+            We will send you important updates and notifications in your browser via Push Notifications. If you
+            wish to allow it:
+        </p>
+        <ul class="list-disc pl-4">
+            <li class="text-white">Click on <strong>"Allow"</strong> button.</li>
+            <li class="text-white">Then this dialog box will be closed & another confirmation pop up will be opened from
+                browser,</li>
+            <li class="text-white">Then select correct option to allow it.</li>
+        </ul>
+
+        <p class="text-lime-200 mt-2">
+            <strong>Note:-</strong>
+            If you don't see any pop-up from the browser side for push notification approval, then you need to change
+            notification settings / reset cookies.
+        </p>
+
+        <!-- <p class="w-full text-white mt-2">
+            <span>Detected Browser: {{ browser }}</span>
+            <br />
+            <span>Detected Platform: {{ platform }}</span>
+        </p> -->
+
+        <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-gray-500 text-orange-200 p-4 pr-2 rounded-lg flex ">
+                <span class="mr-2">
+                    <i class="material-icons">language</i>
+                </span>
+                <span class="font-semibold">Browser: &nbsp;</span>
+                <span>{{ browser }}</span>
+            </div>
+            <div class="bg-gray-500 text-orange-200 p-4 pl-2 rounded-lg flex ">
+                <span class="mr-2">
+                    <i class="material-icons">desktop_mac</i>
+                </span>
+                <span class="font-semibold">Platform: &nbsp;</span>
+                <span>{{ platform }}</span>
+            </div>
+        </div>
+
+
+        <ng-container *ngIf="platform == 'ios' || platform == 'mac' ">
+            <p class="text-white mt-2">We have detected that you are using a Mac/iOS device. Push notification only
+                works on:</p>
+            <ul>
+                <li class="text-white">Home Screen web apps in iOS 16.4 or later</li>
+                <li class="text-white">Webpages in Safari 16 for macOS 13 or later</li>
+            </ul>
+        </ng-container>
+
+        <ng-container *ngIf="platform == 'ios' ">
+            <p class="text-white mt-2">We have detected that you are using an iOS device, but you have not
+                installed/opened it as a Home Screen App.
+                So you will not be able to subscribe to Push Notifications. </p>
+            <ul>
+                <li class="text-white">
+                    To add the website to your Home Screen:
+                    <a href="https://support.apple.com/en-in/guide/iphone/iph42ab2f3a7/16.0/ios/16.0#iph4f9a47bbc"
+                        target="_blank" class="text-yellow-500 underline break-words">
+                        https://support.apple.com/en-in/guide/iphone/iph42ab2f3a7/16.0/ios/16.0#iph4f9a47bbc
+                    </a>
+                </li>
+                <li class="text-white">
+                    To change notification settings:
+                    <a href="https://support.apple.com/en-in/guide/iphone/iph7c3d96bab/16.0/ios/16.0" target="_blank"
+                        class="text-yellow-500 underline break-words">
+                        https://support.apple.com/en-in/guide/iphone/iph7c3d96bab/16.0/ios/16.0
+                    </a>
+                </li>
+            </ul>
+        </ng-container>
+
+        <ng-container *ngIf="platform != 'ios' && platform != 'mac'">
+            <p *ngIf="browser == 'chrome'" class="text-white mt-2">
+                For help on resetting notifications for Chrome:
+                <a href="https://support.google.com/chrome/answer/3220216#zippy=%2Cfix-issues-with-notifications"
+                    target="_blank" class="text-yellow-500 underline break-words">
+                    https://support.google.com/chrome/answer/3220216#zippy=%2Cfix-issues-with-notifications
+                </a>
+            </p>
+        </ng-container>
+    </div>
+
+
+    <div class="flex justify-between content-center p-2">
+        <button mat-button mat-stroked-button class="" [mat-dialog-close]="false">
+            Deny
+        </button>
+        <button cdkFocusInitial mat-raised-button (click)="confirmClick()" color="primary">
+            Allow
+        </button>
+    </div>
+
+</div>
