@@ -12,6 +12,7 @@ import { FingerprintService } from './services/fingerprint.service';
 import { BrowserAgentService } from './services/browser-agent.service';
 import { PushNotificationPromptComponent } from './components/push-notification-prompt/push-notification-prompt.component';
 import { UiModule } from '../ui/ui.module';
+import { PwaInstallHelperPromptComponent } from './components/pwa-install-helper-prompt/pwa-install-helper-prompt.component';
 
 
 const components = [
@@ -22,7 +23,8 @@ const components = [
 @NgModule({
   declarations: [
     ...components,
-    PushNotificationPromptComponent
+    PushNotificationPromptComponent,
+    PwaInstallHelperPromptComponent
   ],
   imports: [
     CommonModule,
