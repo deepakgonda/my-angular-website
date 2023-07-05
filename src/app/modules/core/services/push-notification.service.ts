@@ -123,7 +123,7 @@ export class PushNotificationService {
         },
         panelClass: ['max-w-md'],
         maxWidth: '448px',
-        // width: '50vw',
+        width: '95vw',
         disableClose: true
       });
 
