@@ -76,6 +76,9 @@ export class PushNotificationService {
         try {
           let oldSubscription: PushSubscription | null = (await Promise.race([this.checkSubscription(), this.timeout(15 * 1000)])) as PushSubscription;
           console.log('[NGSW] oldSubscription: ', oldSubscription);
+          if(!oldSubscription) {
+            throw new Error('oldSubscription is null');
+          }
           this.registerOnServer(oldSubscription);  // Do send old subscription on server, so that it can checked when last updated...
           this.registerForListeningMessages();
 
