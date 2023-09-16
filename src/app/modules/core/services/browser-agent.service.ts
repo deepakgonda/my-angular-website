@@ -1,16 +1,22 @@
-import { Injectable } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 
 @Injectable()
 export class BrowserAgentService {
 
+  isBrowser: boolean;
   private userAgent!: string;
 
-  constructor() { }
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { 
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   init() {
 
-    this.userAgent = navigator.userAgent;
-    console.log('Browser userAgent:', this.userAgent);
+    if (this.isBrowser) {
+      this.userAgent = navigator.userAgent;
+      console.log('Browser userAgent:', this.userAgent);
+    }
     
   }
 
@@ -19,7 +25,7 @@ export class BrowserAgentService {
       if (this.userAgent) {
         resolve(this.userAgent);
       } else {
-        await new Promise(resolve => setTimeout(resolve, 2 * 1000));
+        await new Promise(resolve => setTimeout(resolve, 1 * 1000));
         if (this.userAgent) {
           resolve(this.userAgent);
         } else {
