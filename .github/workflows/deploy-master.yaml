@@ -27,14 +27,16 @@ jobs:
       - name: Install Dependencies
         run: npm install --force
       - name: Build Angular App
-        run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng build --progress false --configuration=production
+        # run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng build --progress false --configuration=production
+        run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng run my-angular-website:prerender --configuration=production
       
 
       - name: Clean Default S3 Bucket
         run: aws s3 rm s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
       - name: Upload Build Files to Default S3 Bucket
-        run: aws s3 cp dist/${{ env.APP_NAME }}/ s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
+        # run: aws s3 cp dist/${{ env.APP_NAME }}/ s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
+        run: aws s3 cp dist/${{ env.APP_NAME }}/browser/ s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
       - name: Upload Apple Icons to Default S3 Bucket
-        run: aws s3 cp dist/${{ env.APP_NAME }}/assets/pwa-icons/ios/ s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
+        run: aws s3 cp dist/${{ env.APP_NAME }}/browser/assets/pwa-icons/ios/ s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
       - name: Create CloudFront Cache Invalidation for Main Distribution
         run: AWS_MAX_ATTEMPTS=10 aws cloudfront create-invalidation --distribution-id ${{ vars.MASTER_CLOUDFRONT_ID }}  --paths "/*"

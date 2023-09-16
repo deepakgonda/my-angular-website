@@ -11,6 +11,8 @@ import { UiModule } from './modules/ui/ui.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { provideClientHydration } from '@angular/platform-browser';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 
     CoreModule,
     UiModule,
-    
+
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
@@ -32,7 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [provideClientHydration()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
