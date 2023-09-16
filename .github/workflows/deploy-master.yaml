@@ -27,8 +27,8 @@ jobs:
       - name: Install Dependencies
         run: npm install --force
       - name: Build Angular App
-        # run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng build --progress false --configuration=production
-        run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng run my-angular-website:prerender:production
+        run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng build --progress false --configuration=production
+        # run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng run my-angular-website:prerender:production
       
 
       - name: Clean Default S3 Bucket
