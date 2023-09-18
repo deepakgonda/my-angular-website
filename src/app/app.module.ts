@@ -12,11 +12,13 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { provideClientHydration } from '@angular/platform-browser';
+import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
