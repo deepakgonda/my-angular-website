@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private serviceWorkerService: ServiceWorkerService,
-    private pushNotificationService: PushNotificationService,
     private fingerprintService: FingerprintService,
     private browserAgentService: BrowserAgentService
   ) {
@@ -42,9 +41,5 @@ export class AppComponent implements OnInit {
   }
 
 
-  initPushNotificationTest($ev: any) {
-    console.log('initPushNotificationTest button clicked...');
-    this.pushNotificationService.init();
-  }
 
 }
