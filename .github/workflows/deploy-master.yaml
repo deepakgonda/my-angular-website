@@ -62,7 +62,7 @@ jobs:
 
 
       - name: List Dir
-        run: pwd && ls
+        run: ls
 
 
       - name: Clean Default S3 Bucket
