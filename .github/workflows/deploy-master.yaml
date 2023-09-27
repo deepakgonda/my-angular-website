@@ -16,27 +16,64 @@ jobs:
       matrix:
         node-version: [18.x]
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v4
+
+      - name: Cache NPM Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/*.json') }}
+          restore-keys: ${{ runner.os }}-npm-
+
+
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          # cache: 'npm'
+
+
+      - name: Cache Node Modules
+        uses: actions/cache@v3
+        with:
+          path: ./node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/*.json') }}
+          restore-keys: ${{ runner.os }}-node-modules-
+
+      
+      - name: Cache Angular
+        uses: actions/cache@v3
+        with:
+          path: ./.angular
+          key: ${{ runner.os }}-angular-cli-${{ hashFiles('**/*.json') }}
+          restore-keys: ${{ runner.os }}-angular-cli-
+
+
       - name: Install Angular CLI
         run: npm install -g @angular/cli@16
+      
+      
       - name: Install Dependencies
         run: npm install --force
+      
       - name: Build Angular App
         # run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng build --progress false --configuration=production
         run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng run my-angular-website:prerender:production
-      
+
+
+      - name: List Dir
+        run: pwd && ls
+
 
       - name: Clean Default S3 Bucket
         run: aws s3 rm s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
+
       - name: Upload Build Files to Default S3 Bucket
         # run: aws s3 cp dist/${{ env.APP_NAME }}/ s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
         run: aws s3 cp dist/${{ env.APP_NAME }}/browser/ s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
+
       - name: Upload Apple Icons to Default S3 Bucket
         run: aws s3 cp dist/${{ env.APP_NAME }}/browser/assets/pwa-icons/ios/ s3://${{ vars.MASTER_BUCKET_NAME }} --recursive
+
       - name: Create CloudFront Cache Invalidation for Main Distribution
         run: AWS_MAX_ATTEMPTS=10 aws cloudfront create-invalidation --distribution-id ${{ vars.MASTER_CLOUDFRONT_ID }}  --paths "/*"
