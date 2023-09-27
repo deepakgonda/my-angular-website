@@ -40,14 +40,6 @@ jobs:
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/*.json') }}
           restore-keys: ${{ runner.os }}-node-modules-
 
-      
-      - name: Cache Angular
-        uses: actions/cache@v3
-        with:
-          path: ./.angular
-          key: ${{ runner.os }}-angular-cli-${{ hashFiles('**/*.json') }}
-          restore-keys: ${{ runner.os }}-angular-cli-
-
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli@16
@@ -59,10 +51,6 @@ jobs:
       - name: Build Angular App
         # run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng build --progress false --configuration=production
         run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng run my-angular-website:prerender:production
-
-
-      - name: List Dir
-        run: ls
 
 
       - name: Clean Default S3 Bucket
