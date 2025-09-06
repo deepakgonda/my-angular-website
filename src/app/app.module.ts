@@ -12,13 +12,19 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { provideClientHydration } from '@angular/platform-browser';
+import { HomeComponent } from './components/home/home.component';
 import { ProfilePageComponent } from './components/profile-page/profile-page.component';
+import { BlogListComponent } from './components/blog/blog-list/blog-list.component';
+import { BlogDetailComponent } from './components/blog/blog-detail/blog-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfilePageComponent
+    HomeComponent,
+    ProfilePageComponent,
+    BlogListComponent,
+    BlogDetailComponent
   ],
   imports: [
     BrowserModule,

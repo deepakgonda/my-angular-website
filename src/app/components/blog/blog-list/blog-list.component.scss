@@ -1,0 +1,16 @@
+/* Blog List Component Styles */
+.blog-post {
+  transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-2px);
+}
+
+.tag {
+  transition: background-color 0.2s ease;
+}
+
+.tag:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+}

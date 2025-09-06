@@ -1,0 +1,665 @@
+
+<!-- Main Portfolio Content (only show on root route) -->
+<div *ngIf="isHomePage">
+<!-- Navigation -->
+<nav class="bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 fixed top-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex items-center">
+        <a href="#hero" class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          Deepak Pandey
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#about" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative group">
+          About
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative group">
+          Skills
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative group">
+          Experience
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative group">
+          Projects
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="/blog" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative group">
+          Blog
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="#contact" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
+          Contact
+        </a>
+      </div>
+      <div class="md:hidden flex items-center">
+        <button class="text-gray-300 hover:text-blue-400" onclick="toggleMobileMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 relative overflow-hidden flex items-center">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/2 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+  </div>
+  
+  <!-- Grid pattern overlay -->
+  <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+    <div class="flex flex-col lg:flex-row items-center gap-12">
+      <!-- Profile Image and Content -->
+      <div class="lg:w-1/2 text-center lg:text-left">
+        <div class="mb-8 lg:hidden">
+          <div class="relative inline-block">
+            <img src="assets/images/my-images/deepak_460x460.png" alt="Deepak Pandey" 
+                 class="w-48 h-48 rounded-full shadow-2xl border-4 border-blue-400/30">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20"></div>
+            <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-20 blur-lg"></div>
+          </div>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="space-y-2">
+            <p class="text-blue-400 font-medium text-lg tracking-wide">👋 Hello, I'm</p>
+            <h1 class="text-6xl md:text-7xl font-bold bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent leading-tight">
+              Deepak Pandey
+            </h1>
+          </div>
+          
+          <div class="space-y-4">
+            <p class="text-2xl md:text-3xl text-gray-300 font-light">
+              Full-Stack Developer • <span class="text-blue-400">Cloud Architect</span> • <span class="text-purple-400">GenAI Engineer</span>
+            </p>
+            <p class="text-lg text-gray-400 leading-relaxed max-w-2xl">
+              I craft scalable cloud applications, integrate cutting-edge GenAI into production systems, 
+              and transform complex business requirements into elegant, performant software solutions.
+            </p>
+          </div>
+
+          <!-- Tech Stack Icons -->
+          <div class="flex flex-wrap gap-3 justify-center lg:justify-start py-6">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Angular</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">AWS</span>
+            <span class="tech-badge">GenAI</span>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
+            <a href="#projects" class="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-xl hover:shadow-blue-500/25 transform hover:-translate-y-1">
+              <span class="flex items-center gap-2">
+                View Projects
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </span>
+            </a>
+            
+            <a href="https://linkedin.com/in/deepakgonda" target="_blank" 
+               class="group inline-flex items-center justify-center px-8 py-4 border-2 border-blue-400/50 text-blue-400 font-semibold rounded-full hover:bg-blue-400/10 hover:border-blue-400 transition-all duration-300 backdrop-blur-sm">
+              <span class="flex items-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                Connect
+              </span>
+            </a>
+          </div>
+
+          <!-- Status -->
+          <div class="flex items-center gap-3 justify-center lg:justify-start pt-4">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-gray-400 text-sm">Available for new opportunities</span>
+            </div>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400 text-sm">📍 Lucknow, India</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Image for Desktop -->
+      <div class="hidden lg:block lg:w-1/2">
+        <div class="relative">
+          <div class="relative z-10">
+            <img src="assets/images/my-images/deepak_460x460.png" alt="Deepak Pandey" 
+                 class="w-96 h-96 rounded-2xl shadow-2xl border border-blue-400/30 object-cover">
+          </div>
+          <!-- Glow effects -->
+          <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-400/20 to-purple-400/20 blur-xl"></div>
+          <div class="absolute -top-4 -left-4 w-full h-full rounded-2xl bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-2xl"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">About Me</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+    </div>
+    
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <p class="text-xl text-gray-300 leading-relaxed">
+          I'm a full-stack engineer and solution architect focused on modern web applications, 
+          cloud-native platforms, and cutting-edge GenAI integrations.
+        </p>
+        <p class="text-lg text-gray-400 leading-relaxed">
+          I ship reliable systems, build reusable components, and create developer tooling that teams 
+          actually enjoy maintaining. My approach combines technical excellence with practical business outcomes.
+        </p>
+        
+        <div class="grid grid-cols-2 gap-6 pt-6">
+          <div class="text-center p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+            <div class="text-3xl font-bold text-blue-400">5+</div>
+            <div class="text-gray-400">Years Experience</div>
+          </div>
+          <div class="text-center p-4 bg-gray-900/50 rounded-lg border border-gray-800">
+            <div class="text-3xl font-bold text-purple-400">50+</div>
+            <div class="text-gray-400">Projects Delivered</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-gray-700">
+          <h3 class="text-xl font-semibold text-white mb-4">What I Do</h3>
+          <ul class="space-y-3 text-gray-300">
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+              Build scalable full-stack applications
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-purple-400 rounded-full"></span>
+              Design cloud-native architectures
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-cyan-400 rounded-full"></span>
+              Integrate GenAI into production systems
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+              Lead technical teams and mentor developers
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">Skills & Technologies</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Frontend -->
+      <div class="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-blue-500/50 transition-all duration-300">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white">Frontend</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag skill-tag-blue">Angular</span>
+          <span class="skill-tag skill-tag-blue">React</span>
+          <span class="skill-tag skill-tag-blue">Next.js</span>
+          <span class="skill-tag skill-tag-blue">TailwindCSS</span>
+          <span class="skill-tag skill-tag-blue">Flutter</span>
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-green-500/50 transition-all duration-300">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white">Backend</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag skill-tag-green">Node.js</span>
+          <span class="skill-tag skill-tag-green">Express</span>
+          <span class="skill-tag skill-tag-green">Python</span>
+          <span class="skill-tag skill-tag-green">Flask</span>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white">Databases</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag skill-tag-purple">PostgreSQL</span>
+          <span class="skill-tag skill-tag-purple">DynamoDB</span>
+          <span class="skill-tag skill-tag-purple">MongoDB</span>
+          <span class="skill-tag skill-tag-purple">OpenSearch</span>
+          <span class="skill-tag skill-tag-purple">Milvus</span>
+        </div>
+      </div>
+
+      <!-- Cloud & DevOps -->
+      <div class="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-orange-500/50 transition-all duration-300">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white">Cloud & DevOps</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag skill-tag-orange">AWS</span>
+          <span class="skill-tag skill-tag-orange">ECS</span>
+          <span class="skill-tag skill-tag-orange">Docker</span>
+          <span class="skill-tag skill-tag-orange">Kubernetes</span>
+          <span class="skill-tag skill-tag-orange">CI/CD</span>
+        </div>
+      </div>
+
+      <!-- AI / GenAI -->
+      <div class="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-red-500/50 transition-all duration-300">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white">AI / GenAI</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag skill-tag-red">LangChain</span>
+          <span class="skill-tag skill-tag-red">RAG</span>
+          <span class="skill-tag skill-tag-red">AWS Bedrock</span>
+          <span class="skill-tag skill-tag-red">Claude</span>
+          <span class="skill-tag skill-tag-red">Ollama</span>
+        </div>
+      </div>
+
+      <!-- Web Fundamentals -->
+      <div class="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl border border-gray-700 hover:border-gray-500/50 transition-all duration-300">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 bg-gradient-to-r from-gray-500 to-gray-600 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-white">Web Fundamentals</h3>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-tag skill-tag-gray">HTML/CSS</span>
+          <span class="skill-tag skill-tag-gray">TypeScript</span>
+          <span class="skill-tag skill-tag-gray">JavaScript</span>
+          <span class="skill-tag skill-tag-gray">WebSockets</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications" class="py-20 bg-gray-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">Certifications</h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="group relative bg-gradient-to-br from-gray-800 to-gray-900 border border-green-500/30 p-6 rounded-xl hover:border-green-400/50 transition-all duration-300">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 rounded-xl"></div>
+        <div class="relative">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">AWS Certified Solutions Architect – Associate</h3>
+          <p class="text-green-400 font-medium">Active • Valid until Dec 2026</p>
+        </div>
+      </div>
+
+      <div class="group relative bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-500/30 p-6 rounded-xl hover:border-gray-400/50 transition-all duration-300">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-500/5 to-gray-600/5 rounded-xl"></div>
+        <div class="relative">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-gradient-to-r from-gray-500 to-gray-600 rounded-lg flex items-center justify-center">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-white mb-2">AWS Certified Developer – Associate</h3>
+          <p class="text-gray-400">Previous Certification</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Experience</h2>
+      <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <!-- Thai Informatic Systems -->
+      <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Senior Software Engineer / Tech Lead</h3>
+            <p class="text-lg text-blue-600">Thai Informatic Systems</p>
+          </div>
+          <div class="text-gray-600 mt-2 md:mt-0">
+            <p>Feb 2021 – Present</p>
+            <p>Bangkok, Thailand</p>
+          </div>
+        </div>
+
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            <span>Architected multi-tenant SaaS platforms including Servicemind (real estate management) and Cantrak (seed-to-sale traceability) with dynamic RBAC and modular services.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            <span>Built a high-concurrency booking system and supporting architecture using AWS DynamoDB, AWS Fargate, and scalable microservices.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            <span>Designed and delivered GenAI RAG platform with MCP; integrated Bedrock (DeepSeek, Claude, Gemini) and Ollama.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            <span>Designed high-concurrency voting system (DynamoDB + ECS) handling 2–3M votes in minutes.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Alcanzar Software Solutions -->
+      <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Senior Software Engineer / Tech Lead</h3>
+            <p class="text-lg text-blue-600">Alcanzar Software Solutions</p>
+          </div>
+          <div class="text-gray-600 mt-2 md:mt-0">
+            <p>Jan 2019 – Dec 2020</p>
+            <p>Lucknow, India</p>
+          </div>
+        </div>
+
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            <span>Migrated legacy apps to AWS cloud-native architectures.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            <span>Built scalable APIs with Sails.js, PostgreSQL, Redis, RabbitMQ.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Unstop -->
+      <div class="bg-white p-8 rounded-lg shadow-md">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Full Stack Developer</h3>
+            <p class="text-lg text-blue-600">Unstop</p>
+          </div>
+          <div class="text-gray-600 mt-2 md:mt-0">
+            <p>Jun 2017 – Nov 2018</p>
+            <p>New Delhi, India</p>
+          </div>
+        </div>
+
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            <span>Delivered high-traffic features using Node.js, Angular, MongoDB.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-600 mr-2">•</span>
+            <span>Optimized performance for event/challenge flows.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Professional Projects</h2>
+      <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- GenAI + MCP RAG Client -->
+      <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">GenAI + MCP RAG Client</h3>
+          <p class="text-gray-600 mb-4">Unified client supporting DeepSeek, Claude, Gemini, Ollama; flexible provider integration.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">LangChain</span>
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">RAG</span>
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">MCP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Automated Multi-Stack Installer -->
+      <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Automated Multi-Stack Installer</h3>
+          <p class="text-gray-600 mb-4">One-liner deployment for GenAI + SaaS stacks with Docker/K8s, Traefik, HTTPS.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Docker</span>
+            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Kubernetes</span>
+            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Traefik</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- High-Concurrency Voting System -->
+      <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">High-Concurrency Voting System</h3>
+          <p class="text-gray-600 mb-4">AWS DynamoDB + ECS architecture, scaled to millions of requests with near-zero failures.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">AWS</span>
+            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">DynamoDB</span>
+            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs">ECS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Personal Projects Section -->
+<section id="personal-projects" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Personal Projects</h2>
+      <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Flutter + Web Video Platform -->
+      <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Flutter + Web Video Platform</h3>
+          <p class="text-gray-600 mb-4">Offline-ready video player with playlists, AWS S3 sync, and Firebase Auth.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Flutter</span>
+            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">AWS S3</span>
+            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Firebase</span>
+          </div>
+          <a href="https://github.com/deepakgonda" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- Angular Image Viewer -->
+      <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Angular Image Viewer</h3>
+          <p class="text-gray-600 mb-4">Reusable Angular component (zoom, rotate, fullscreen, drag).</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Angular</span>
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Component</span>
+          </div>
+          <a href="https://github.com/deepakgonda" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- Sails Hook – Kue Jobs -->
+      <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Sails Hook – Kue Jobs</h3>
+          <p class="text-gray-600 mb-4">Background job scheduling plugin for Sails.js with a simple status UI.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Node.js</span>
+            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Sails.js</span>
+          </div>
+          <a href="https://github.com/deepakgonda" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm">View on GitHub →</a>
+        </div>
+      </div>
+
+      <!-- Cloudflare Site Monitor -->
+      <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Cloudflare Site Monitor</h3>
+          <p class="text-gray-600 mb-4">Python tool to automate Cloudflare tunnel monitoring and restarts via Docker.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Python</span>
+            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Docker</span>
+            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Cloudflare</span>
+          </div>
+          <a href="https://github.com/deepakgonda" target="_blank" class="text-blue-600 hover:text-blue-800 text-sm">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="https://github.com/deepakgonda" target="_blank" class="bg-gray-900 text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition-colors">
+        View More on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+      <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="text-center">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-center justify-center">
+              <span class="w-8 h-8 mr-3 text-blue-600">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+              </span>
+              <a href="mailto:mail&#64;deepakpandey.in" class="text-gray-700 hover:text-blue-600">mail&#64;deepakpandey.in</a>
+            </div>
+
+            <div class="flex items-center justify-center">
+              <span class="w-8 h-8 mr-3 text-blue-600">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                </svg>
+              </span>
+              <span class="text-gray-700">Lucknow, India</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6">Connect With Me</h3>
+          <div class="space-y-4">
+            <a href="https://linkedin.com/in/deepakgonda" target="_blank" class="flex items-center justify-center text-gray-700 hover:text-blue-600">
+              <span class="w-8 h-8 mr-3">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </span>
+              LinkedIn
+            </a>
+
+            <a href="https://github.com/deepakgonda" target="_blank" class="flex items-center justify-center text-gray-700 hover:text-blue-600">
+              <span class="w-8 h-8 mr-3">
+                <svg fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </span>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p>&copy; 2025 Deepak Pandey. All rights reserved.</p>
+  </div>
+</footer>
+</div>
+
+<!-- Router outlet for blog pages -->
+<router-outlet></router-outlet>
