@@ -105,67 +105,6 @@
             ],
             "scripts": []
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/my-angular-website/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "my-angular-website:build:development",
-              "serverTarget": "my-angular-website:server:development"
-            },
-            "production": {
-              "browserTarget": "my-angular-website:build:production",
-              "serverTarget": "my-angular-website:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "my-angular-website:build:production",
-              "serverTarget": "my-angular-website:server:production"
-            },
-            "development": {
-              "browserTarget": "my-angular-website:build:development",
-              "serverTarget": "my-angular-website:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }
