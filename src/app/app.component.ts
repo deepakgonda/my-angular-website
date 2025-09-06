@@ -4,6 +4,7 @@ import { PushNotificationService } from './modules/core/services/push-notificati
 import { FingerprintService } from './modules/core/services/fingerprint.service';
 import { BrowserAgentService } from './modules/core/services/browser-agent.service';
 import { isPlatformBrowser } from '@angular/common';
+import { SeoService } from './modules/core/services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -18,14 +19,18 @@ export class AppComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object,
     private serviceWorkerService: ServiceWorkerService,
     private fingerprintService: FingerprintService,
-    private browserAgentService: BrowserAgentService
+  private browserAgentService: BrowserAgentService,
+  private seo: SeoService
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit() {
 
-    if (this.isBrowser) {
+  // Apply SEO in both SSR and browser contexts
+  this.seo.applyDefaultSeo();
+
+  if (this.isBrowser) {
       this.initCoreServices();
     } else {
       console.log('Not Initializing Core services, b/c platform is server');
