@@ -14,43 +14,25 @@ jobs:
       AWS_REGION: ${{ vars.AWS_DEFAULT_REGION }}
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [20.x]
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache NPM Dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('**/*.json') }}
-          restore-keys: ${{ runner.os }}-npm-
-
-
       - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          # cache: 'npm'
-
-
-      - name: Cache Node Modules
-        uses: actions/cache@v3
-        with:
-          path: ./node_modules
-          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/*.json') }}
-          restore-keys: ${{ runner.os }}-node-modules-
-
+          cache: 'npm'
 
       - name: Install Angular CLI
-        run: npm install -g @angular/cli@16
+        run: npm install -g @angular/cli@17
       
       
       - name: Install Dependencies
-        run: npm install --force
+        run: npm ci
       
       - name: Build Angular App
-        # run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng build --progress false --configuration=production
-        run: node --max_old_space_size=12192 ./node_modules/@angular/cli/bin/ng run my-angular-website:prerender:production
+        run: npm run prerender
 
 
       - name: Clean Default S3 Bucket
