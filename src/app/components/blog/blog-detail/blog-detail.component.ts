@@ -64,9 +64,10 @@ export interface BlogPostDetail {
 }
 
 @Component({
-  selector: 'app-blog-detail',
-  templateUrl: './blog-detail.component.html',
-  styleUrls: ['./blog-detail.component.scss']
+    selector: 'app-blog-detail',
+    templateUrl: './blog-detail.component.html',
+    styleUrls: ['./blog-detail.component.scss'],
+    standalone: false
 })
 export class BlogDetailComponent implements OnInit {
   post: BlogPostDetail | null = null;

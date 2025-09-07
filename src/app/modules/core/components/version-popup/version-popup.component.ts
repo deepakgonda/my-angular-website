@@ -4,9 +4,10 @@ import { MatSnackBarRef } from '@angular/material/snack-bar';
 import { Observable, map, shareReplay } from 'rxjs';
 
 @Component({
-  selector: 'app-version-popup',
-  templateUrl: './version-popup.component.html',
-  styleUrls: ['./version-popup.component.scss']
+    selector: 'app-version-popup',
+    templateUrl: './version-popup.component.html',
+    styleUrls: ['./version-popup.component.scss'],
+    standalone: false
 })
 export class VersionPopupComponent implements OnInit {
 

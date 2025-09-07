@@ -3,9 +3,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { BrowserAgentService } from '../../services/browser-agent.service';
 
 @Component({
-  selector: 'app-push-notification-prompt',
-  templateUrl: './push-notification-prompt.component.html',
-  styleUrls: ['./push-notification-prompt.component.scss']
+    selector: 'app-push-notification-prompt',
+    templateUrl: './push-notification-prompt.component.html',
+    styleUrls: ['./push-notification-prompt.component.scss'],
+    standalone: false
 })
 export class PushNotificationPromptComponent {
   browser = 'Unknown';

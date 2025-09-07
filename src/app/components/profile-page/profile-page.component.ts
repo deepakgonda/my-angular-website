@@ -3,9 +3,10 @@ import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { PushNotificationService } from 'src/app/modules/core/services/push-notification.service';
 
 @Component({
-  selector: 'app-profile-page',
-  templateUrl: './profile-page.component.html',
-  styleUrls: ['./profile-page.component.scss']
+    selector: 'app-profile-page',
+    templateUrl: './profile-page.component.html',
+    styleUrls: ['./profile-page.component.scss'],
+    standalone: false
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
 
