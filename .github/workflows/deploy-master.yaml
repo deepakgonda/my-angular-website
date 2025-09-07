@@ -25,14 +25,14 @@ jobs:
           cache: 'npm'
 
       - name: Install Angular CLI
-        run: npm install -g @angular/cli@17
+        run: npm install -g @angular/cli@18
       
       
       - name: Install Dependencies
         run: npm ci
       
       - name: Build Angular App
-        run: npm run prerender
+        run: ng build --configuration production
 
 
       - name: Clean Default S3 Bucket

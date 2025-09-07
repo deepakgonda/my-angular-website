@@ -10,7 +10,7 @@
     "serve:ssr:my-angular-website": "node dist/my-angular-website/server/server.mjs"
   },
   "private": true,
-  "dependencies": {
+  "dependencies": { 
     "@angular/animations": "^18.2.13",
     "@angular/cdk": "^18.2.14",
     "@angular/common": "^18.2.13",

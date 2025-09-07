@@ -9,7 +9,7 @@ import { CoreModule } from './modules/core/core.module';
 import { UiModule } from './modules/ui/ui.module';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { provideClientHydration } from '@angular/platform-browser';
 import { HomeComponent } from './components/home/home.component';
@@ -30,7 +30,6 @@ import { BlogDetailComponent } from './components/blog/blog-detail/blog-detail.c
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
 
     CoreModule,
     UiModule,
@@ -42,7 +41,10 @@ import { BlogDetailComponent } from './components/blog/blog-detail/blog-detail.c
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [provideClientHydration()],
+  providers: [
+    provideClientHydration(),
+    provideHttpClient(withFetch())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
