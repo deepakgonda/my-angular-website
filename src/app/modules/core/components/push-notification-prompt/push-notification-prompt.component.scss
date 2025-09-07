@@ -1,5 +1,5 @@
-@import "src/sass/variables";
-@import "src/sass/_mixins";
+@use "src/sass/variables";
+@use "src/sass/_mixins" as mixins;
 
 .mat-dialog-style {
     margin: 0px;
@@ -16,7 +16,7 @@
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
 
-        @include media('mobile') {
+        @include mixins.media('mobile') {
             padding: 5px;
         }
 
