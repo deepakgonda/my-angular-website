@@ -13,7 +13,6 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 
 import { provideClientHydration } from '@angular/platform-browser';
 import { HomeComponent } from './components/home/home.component';
-import { ProfilePageComponent } from './components/profile-page/profile-page.component';
 import { BlogListComponent } from './components/blog/blog-list/blog-list.component';
 import { BlogDetailComponent } from './components/blog/blog-detail/blog-detail.component';
 
@@ -22,7 +21,6 @@ import { BlogDetailComponent } from './components/blog/blog-detail/blog-detail.c
   declarations: [
     AppComponent,
     HomeComponent,
-    ProfilePageComponent,
     BlogListComponent,
     BlogDetailComponent
   ],
