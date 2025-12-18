@@ -59,7 +59,8 @@ export class SeoService {
       },
       sameAs: [
         'https://github.com/deepakgonda',
-        'https://www.linkedin.com/in/deepakgonda/'
+        'https://www.linkedin.com/in/deepakgonda/',
+        'https://www.npmjs.com/~deepakgonda'
       ]
     });
   }
