@@ -165,16 +165,11 @@ html {
     position: relative;
     z-index: 1;
     transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
-    /* Invert sketch so lines glow white on dark background; screen blend removes the black fill */
-    filter: invert(1) brightness(0.88) contrast(1.15);
-    mix-blend-mode: screen;
-    border-color: transparent !important;
 }
 
 .hero-photo:hover img {
     transform: translateY(-6px);
-    filter: invert(1) brightness(1.0) contrast(1.2);
-    box-shadow: 0 25px 80px -15px rgba(147, 197, 253, 0.25), 0 10px 30px -10px rgba(196, 181, 253, 0.20);
+    box-shadow: 0 25px 80px -15px rgba(59, 130, 246, 0.35), 0 10px 30px -10px rgba(168, 85, 247, 0.25);
 }
 
 .glass-badge {
