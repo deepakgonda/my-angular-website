@@ -64,6 +64,15 @@
           Blog
           <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300"></span>
         </a> -->
+                <a href="#proxaai" (click)="scrollToSection('proxaai', $event)"
+                    [attr.aria-current]="activeSection === 'proxaai' ? 'page' : null"
+                    [ngClass]="{'text-amber-400': activeSection === 'proxaai'}"
+                    class="text-amber-300 hover:text-amber-200 transition-all duration-300 relative group cursor-pointer font-medium">
+                    ✨ ProxaAI
+                    <span
+                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-400 group-hover:w-full transition-all duration-300"
+                        [class.w-full]="activeSection === 'proxaai'"></span>
+                </a>
                 <a href="#contact" (click)="scrollToSection('contact', $event)"
                     class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:from-blue-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 cursor-pointer">
                     Contact
@@ -100,6 +109,9 @@
             <a href="#projects" (click)="scrollToSection('projects', $event); toggleMobileMenu()"
                 class="block px-3 py-2 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer"
                 role="menuitem">Projects</a>
+            <a href="#proxaai" (click)="scrollToSection('proxaai', $event); toggleMobileMenu()"
+                class="block px-3 py-2 text-amber-300 hover:text-amber-200 transition-colors cursor-pointer font-medium"
+                role="menuitem">✨ ProxaAI</a>
             <a routerLink="/blog" (click)="toggleMobileMenu()"
                 class="block px-3 py-2 text-gray-300 hover:text-blue-400 transition-colors" role="menuitem">Blog</a>
             <a href="#contact" (click)="scrollToSection('contact', $event); toggleMobileMenu()"
@@ -890,6 +902,127 @@
                 class="bg-gradient-to-r from-red-600 to-pink-600 text-white px-8 py-3 rounded-lg hover:from-red-700 hover:to-pink-700 transition-colors">
                 View All NPM Packages
             </a>
+        </div>
+    </div>
+</section>
+
+<!-- ProxaAI Featured Section -->
+<section id="proxaai" class="py-24 bg-gray-950 relative overflow-hidden" aria-labelledby="proxaai-title">
+    <!-- Cosmic background -->
+    <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-600/8 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-amber-500/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-indigo-600/5 rounded-full blur-3xl"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(109,40,217,0.06)_0%,transparent_60%)]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        <!-- Badge + Heading -->
+        <div class="text-center mb-4">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-semibold tracking-widest uppercase">
+                ✨ Featured Project
+            </span>
+        </div>
+        <div class="text-center mb-16">
+            <h2 id="proxaai-title"
+                class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-amber-300 via-violet-300 to-indigo-300 bg-clip-text text-transparent mb-4">
+                ProxaAI
+            </h2>
+            <p class="text-2xl text-gray-300 font-light mb-3">Your Personal AI Jyotishi</p>
+            <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                A proprietary multi-agent AI platform fusing millennia of Vedic astrology wisdom with cutting-edge LLM orchestration — built and architected from scratch.
+            </p>
+            <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-violet-500 mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+            <!-- Left: Feature highlights -->
+            <div class="space-y-4">
+                <div class="flex items-start gap-4 p-5 bg-gradient-to-r from-violet-500/5 to-indigo-500/5 border border-violet-500/20 rounded-xl hover:border-violet-400/40 transition-all duration-300">
+                    <span class="text-2xl flex-shrink-0">🧠</span>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Four Independent AI Minds</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Four separate reasoning engines simultaneously analyze your birth data — a fifth synthesis layer cross-validates all outputs for maximum accuracy.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 bg-gradient-to-r from-amber-500/5 to-orange-500/5 border border-amber-500/20 rounded-xl hover:border-amber-400/40 transition-all duration-300">
+                    <span class="text-2xl flex-shrink-0">🌌</span>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Seven Ancient Traditions</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Vedic Jyotish, 27-Nakshatra system, Vimshottari Dasha, Prashna Kundali, Kaal Purush transits, Pythagorean numerology & Eastern cross-reference.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 bg-gradient-to-r from-cyan-500/5 to-teal-500/5 border border-cyan-500/20 rounded-xl hover:border-cyan-400/40 transition-all duration-300">
+                    <span class="text-2xl flex-shrink-0">📐</span>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">60+ Pre-Computed Parameters</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Planetary positions to arc-minute accuracy, nakshatra lords, all 12 house placements, live transits & divisional charts — before AI interprets a single word.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-5 bg-gradient-to-r from-rose-500/5 to-pink-500/5 border border-rose-500/20 rounded-xl hover:border-rose-400/40 transition-all duration-300">
+                    <span class="text-2xl flex-shrink-0">🌐</span>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Bilingual & Real-Time</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Full English and Hindi support with live planetary transits mapped against your natal chart for every reading. No generic horoscopes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Card + CTA -->
+            <div class="space-y-6">
+                <div class="proxaai-card p-8 rounded-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-400 to-violet-600 flex items-center justify-center text-3xl shadow-lg shadow-violet-500/30">
+                            🔮
+                        </div>
+                        <div>
+                            <p class="text-white font-bold text-xl">proxaai.com</p>
+                            <p class="text-amber-400 text-sm">Live · Free to Start · No Credit Card</p>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Built as founder & sole engineer — from the multi-agent orchestration pipeline and Vedic computing engine to the RAG layer and full-stack web platform.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="skill-tag skill-tag-purple">Python</span>
+                        <span class="skill-tag skill-tag-purple">LangChain</span>
+                        <span class="skill-tag skill-tag-red">AWS Bedrock</span>
+                        <span class="skill-tag skill-tag-red">Multi-Agent AI</span>
+                        <span class="skill-tag skill-tag-blue">RAG</span>
+                        <span class="skill-tag skill-tag-blue">Next.js</span>
+                        <span class="skill-tag skill-tag-orange">Vedic Astrology</span>
+                        <span class="skill-tag skill-tag-green">Numerology</span>
+                    </div>
+
+                    <a href="https://proxaai.com" target="_blank" rel="noopener noreferrer"
+                        class="proxaai-cta-btn group inline-flex w-full items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300">
+                        <span>✨ Explore ProxaAI</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Stats row -->
+                <div class="grid grid-cols-3 gap-4">
+                    <div class="text-center p-4 bg-gray-900/60 rounded-xl border border-amber-500/20">
+                        <div class="text-2xl font-bold text-amber-400">4</div>
+                        <div class="text-gray-400 text-xs mt-1">AI Engines</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-900/60 rounded-xl border border-violet-500/20">
+                        <div class="text-2xl font-bold text-violet-400">7</div>
+                        <div class="text-gray-400 text-xs mt-1">Traditions</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-900/60 rounded-xl border border-cyan-500/20">
+                        <div class="text-2xl font-bold text-cyan-400">60+</div>
+                        <div class="text-gray-400 text-xs mt-1">Parameters</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
