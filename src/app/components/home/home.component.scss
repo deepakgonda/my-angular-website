@@ -142,8 +142,7 @@ html {
 .hero-photo .glow-ring {
     position: absolute;
     inset: -18px;
-    border-radius: 1.25rem;
-    /* match rounded-2xl */
+    border-radius: 9999px;
     background: conic-gradient(from 0deg, rgba(59, 130, 246, 0.35), rgba(168, 85, 247, 0.35), rgba(34, 211, 238, 0.35), rgba(59, 130, 246, 0.35));
     filter: blur(18px);
     opacity: 0.35;
@@ -154,7 +153,7 @@ html {
 .hero-photo .soft-glow {
     position: absolute;
     inset: -12px;
-    border-radius: 1.25rem;
+    border-radius: 9999px;
     background: radial-gradient(60% 60% at 50% 50%, rgba(59, 130, 246, 0.28) 0%, rgba(168, 85, 247, 0.22) 45%, rgba(17, 24, 39, 0) 70%);
     filter: blur(22px);
     opacity: 0.55;
@@ -189,6 +188,94 @@ html {
     to {
         transform: rotate(360deg);
     }
+}
+
+/* Orbiting tech tags around the circular hero photo */
+/* Each .orbit-pivot independently animates: rotate(θ) translateY(-r) traces a perfect circle */
+.orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    z-index: 3;
+    pointer-events: none;
+
+    /* Faint dashed orbit track — shows the circular path */
+    &::before {
+        content: '';
+        position: absolute;
+        width: 430px;
+        height: 430px;
+        margin-left: -215px;
+        margin-top: -215px;
+        border-radius: 50%;
+        border: 1px dashed rgba(96, 165, 250, 0.12);
+        pointer-events: none;
+    }
+}
+
+.orbit-pivot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: 0 0;
+    animation: orbit-pivot-spin 22s linear infinite;
+    animation-delay: var(--delay);
+}
+
+.hero-photo:hover .orbit-pivot {
+    animation-play-state: paused;
+}
+
+.orbit-tag {
+    display: inline-block;
+    white-space: nowrap;
+    /*
+     * No counter-rotation: the tag lives in the pivot's rotated local frame.
+     * The pivot's local X-axis always points tangentially along the circumference,
+     * so text naturally flows parallel to the circle edge.
+     */
+    transform: translate(-50%, -50%);
+    padding: 4px 11px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    background: rgba(9, 14, 30, 0.85);
+    border: 1px solid rgba(96, 165, 250, 0.45);
+    color: rgb(147, 197, 253);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.25), inset 0 1px 0 rgba(255,255,255,0.06);
+
+    /* Category color variants */
+    &.tag-green {
+        border-color: rgba(52, 211, 153, 0.5);
+        color: rgb(110, 231, 183);
+        box-shadow: 0 0 10px rgba(52, 211, 153, 0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    &.tag-orange {
+        border-color: rgba(251, 146, 60, 0.5);
+        color: rgb(253, 186, 116);
+        box-shadow: 0 0 10px rgba(251, 146, 60, 0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    &.tag-purple {
+        border-color: rgba(167, 139, 250, 0.55);
+        color: rgb(196, 181, 253);
+        box-shadow: 0 0 10px rgba(167, 139, 250, 0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    &.tag-cyan {
+        border-color: rgba(34, 211, 238, 0.5);
+        color: rgb(103, 232, 249);
+        box-shadow: 0 0 10px rgba(34, 211, 238, 0.2), inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+}
+
+/* rotate(θ) translateY(-r) — as θ goes 0→360, this traces a perfect circle of radius r */
+@keyframes orbit-pivot-spin {
+    from { transform: rotate(0deg)   translateY(-215px); }
+    to   { transform: rotate(360deg) translateY(-215px); }
 }
 
 /* Aurora gradient background */

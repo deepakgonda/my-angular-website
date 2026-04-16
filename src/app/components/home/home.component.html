@@ -249,14 +249,24 @@
                 <div class="hero-photo" [style.transform]="photoTransform" [style.transition]="photoTransition"
                     (mousemove)="onPhotoMouseMove($event)" (mouseleave)="resetPhotoTilt()"
                     (mouseenter)="resetPhotoTilt()">
-                    <span class="glow-ring"></span>
-                    <span class="soft-glow"></span>
+                    <span class="glow-ring rounded-full"></span>
+                    <span class="soft-glow rounded-full"></span>
                     <img src="assets/images/my-images/deepak_460x460_sketch.png" alt="Portrait of Deepak Pandey" width="460"
                         height="460" loading="eager" decoding="sync" fetchpriority="high"
-                        class="w-96 h-96 rounded-2xl border border-blue-400/30 object-cover">
-                    <!-- floating badges -->
-                    <span class="absolute -right-6 top-6 px-3 py-1 text-xs rounded-full glass-badge">GenAI</span>
-                    <span class="absolute -left-6 bottom-6 px-3 py-1 text-xs rounded-full glass-badge">Cloud</span>
+                        class="w-96 h-96 rounded-full border border-blue-400/30 object-cover">
+                    <!-- Orbiting tech tags: each pivot animates rotate(θ)translateY(-r) → perfect circle -->
+                    <div class="orbit-ring" aria-hidden="true">
+                        <div class="orbit-pivot" style="--delay: 0s"><span class="orbit-tag">React</span></div>
+                        <div class="orbit-pivot" style="--delay: -2.2s"><span class="orbit-tag">Angular</span></div>
+                        <div class="orbit-pivot" style="--delay: -4.4s"><span class="orbit-tag tag-green">Node.js</span></div>
+                        <div class="orbit-pivot" style="--delay: -6.6s"><span class="orbit-tag tag-green">Python</span></div>
+                        <div class="orbit-pivot" style="--delay: -8.8s"><span class="orbit-tag tag-orange">AWS</span></div>
+                        <div class="orbit-pivot" style="--delay: -11s"><span class="orbit-tag tag-purple">GenAI</span></div>
+                        <div class="orbit-pivot" style="--delay: -13.2s"><span class="orbit-tag tag-orange">Docker</span></div>
+                        <div class="orbit-pivot" style="--delay: -15.4s"><span class="orbit-tag">Next.js</span></div>
+                        <div class="orbit-pivot" style="--delay: -17.6s"><span class="orbit-tag tag-orange">Kubernetes</span></div>
+                        <div class="orbit-pivot" style="--delay: -19.8s"><span class="orbit-tag tag-cyan">Flutter</span></div>
+                    </div>
                 </div>
             </div>
         </div>
